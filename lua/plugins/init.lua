@@ -63,13 +63,7 @@ return {
   	},
   },
 
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return require "custom.configs.null-ls"
-    end,
-  },
+  { "nvim-neotest/nvim-nio" },
 
   {
     "rcarriga/nvim-dap-ui",
@@ -106,7 +100,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function(_, _)
-      require("core.utils").load_mappings("dap")
+      -- require("core.utils").load_mappings("dap")
     end
   },
 
