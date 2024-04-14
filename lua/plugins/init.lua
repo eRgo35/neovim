@@ -36,7 +36,7 @@ return {
         -- c/c++
         "clangd",
         "clang-format",
-        "corelldb",
+        "codelldb",
   		},
   	},
   },
