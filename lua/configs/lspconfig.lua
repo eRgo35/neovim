@@ -16,6 +16,23 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.svelte.setup {}
+
+lspconfig.clangd.setup {
+  on_attach = function (client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+-- configuring single server, example: typescript
+ lspconfig.ts_ls.setup {
+   on_attach = nvlsp.on_attach,
+   on_init = nvlsp.on_init,
+   capabilities = nvlsp.capabilities,
+ }
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
