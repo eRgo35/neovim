@@ -26,6 +26,20 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"rust"},
+  -- root_dir = util.root_pattern("Cargo.toml"),
+  settings = {
+    ['rust_analyzer'] = {
+      cargo = {
+        allFeatures = true,
+      },
+    },
+  },
+})
+
 -- configuring single server, example: typescript
  lspconfig.ts_ls.setup {
    on_attach = nvlsp.on_attach,
